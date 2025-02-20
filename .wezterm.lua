@@ -19,14 +19,21 @@ wezterm.on("gui-startup", function(cmd)
 		cwd = "/Users/kacper/Work/aicalendar/aicalendar",
 	})
 	tab1:set_title("AICalendar")
+
 	local tab2, pane2 = window:spawn_tab({
 		cwd = "/Users/kacper/Work/aicalendar/app-web",
 	})
 	tab2:set_title("app-web")
+
 	local tab3, pane3 = window:spawn_tab({
 		cwd = "/Users/kacper/Work/aicalendar/api-user-service",
 	})
 	tab3:set_title("user-service")
+
+	local tab4, pane4 = window:spawn_tab({
+		cwd = "/Users/kacper/Work/aicalendar/api-event-service",
+	})
+	tab3:set_title("event-service")
 
 	-- Set default workspace
 	mux.set_active_workspace("Default")
