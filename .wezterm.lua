@@ -4,6 +4,12 @@ local act = wezterm.action
 local config = {}
 
 config.color_scheme = "ChallengerDeep"
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
 wezterm.on("gui-startup", function(cmd)
 	--
