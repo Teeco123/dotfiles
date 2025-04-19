@@ -10,6 +10,9 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+config.window_background_opacity = 0.7
+config.macos_window_background_blur = 30
+config.font_size = 26
 
 wezterm.on("gui-startup", function(cmd)
 	--
@@ -83,6 +86,22 @@ wezterm.on("gui-startup", function(cmd)
 		cwd = "/Users/kacper/Developer/adhd-app/",
 	})
 	tabADHD3:set_title("server")
+
+	--
+	-- Data structures workspace
+	--
+	local tabDS1, paneDS1, windowDS = mux.spawn_window({
+		workspace = "Data structures app",
+		cwd = "/Users/kacper/Developer/data-structures/",
+	})
+	tabDS1:set_title("nvim")
+	tabDS1:activate()
+	paneDS1:send_text("nvim\n")
+
+	local tabDS2, paneDS2 = windowDS:spawn_tab({
+		cwd = "/Users/kacper/Developer/data-structures/",
+	})
+	tabDS2:set_title("git")
 
 	-- Set default workspace
 	mux.set_active_workspace("Default")
