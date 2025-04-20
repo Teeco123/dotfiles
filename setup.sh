@@ -36,7 +36,8 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock magnification -bool false
 defaults write com.apple.dock tilesize -int 52
-defaults write com.apple.dock "show-recents" -bool false
+defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock static-only -bool "true"
 
 ## Keyboard 
 defaults write NSGlobalDomain KeyRepeat -int 1
@@ -51,8 +52,16 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 ## Finder
 defaults write com.apple.finder ShowPathbar -bool true
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool "true"
+defaults write com.apple.finder _FXSortFoldersFirst -bool "true"
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool "false"
+defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "false"
+defaults write com.apple.finder "ShowExternalHardDrivesOnDesktop" -bool "false"
+defaults write com.apple.finder "ShowRemovableMediaOnDesktop" -bool "false"
+
+## Keyboard
+defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
 
 #Setup config files
 git clone --bare https://github.com/teeco123/dotfiles.git $HOME/.dotfiles
