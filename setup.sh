@@ -77,6 +77,9 @@ defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
 # SbarLua
 (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
 
+
+rm -rf .dotfiles/
+
 # Kill affected apps
 for app in "Dock" "Finder"; do
   killall "${app}" > /dev/null 2>&1
