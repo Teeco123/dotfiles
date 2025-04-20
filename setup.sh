@@ -54,6 +54,12 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+#Setup config files
+git clone --bare https://github.com/teeco123/dotfiles.git $HOME/.dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles config --local status.showUntrackedFiles no
+dotfiles checkout
+
 # Kill affected apps
 for app in "Dock" "Finder"; do
   killall "${app}" > /dev/null 2>&1
