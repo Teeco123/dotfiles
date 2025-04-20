@@ -19,7 +19,7 @@ echo "Installing Brew Formulae..."
 brew install git
 brew install neovim
 brew install cmake
-brew instlal yabai
+brew install yabai
 brew install nvm
 
 ## Casks
