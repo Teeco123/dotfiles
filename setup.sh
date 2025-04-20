@@ -13,6 +13,7 @@ brew analytics off
 ## Taps
 echo "Tapping Brew..."
 brew tap koekeishiya/formulae
+brew tap FelixKratz/formulae
 
 ## Formulae
 echo "Installing Brew Formulae..."
@@ -21,9 +22,18 @@ brew install neovim
 brew install cmake
 brew install yabai
 brew install nvm
+brew install switchaudio-osx
+brew install nowplaying-cli
+brew install sketchybar
 
 ## Casks
 brew install --cask wezterm
+
+## Fonts
+brew install --cask sf-symbols
+brew install --cask font-sf-mono
+brew install --cask font-sf-pro
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
 # macOS Settings
 echo "Changing macOS defaults..."
@@ -63,11 +73,14 @@ defaults write com.apple.finder "ShowRemovableMediaOnDesktop" -bool "false"
 ## Keyboard
 defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
 
-#Setup config files
+# Setup config files
 git clone --bare https://github.com/teeco123/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout
+
+# SbarLua
+(git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
 
 # Kill affected apps
 for app in "Dock" "Finder"; do
