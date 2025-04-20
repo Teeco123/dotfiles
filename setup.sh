@@ -17,6 +17,7 @@ brew tap FelixKratz/formulae
 
 ## Formulae
 echo "Installing Brew Formulae..."
+brew install lua
 brew install git
 brew install neovim
 brew install cmake
