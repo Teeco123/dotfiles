@@ -74,12 +74,6 @@ defaults write com.apple.finder "ShowRemovableMediaOnDesktop" -bool "false"
 ## Keyboard
 defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
 
-# Setup config files
-git clone --bare https://github.com/teeco123/dotfiles.git $HOME/.dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dotfiles config --local status.showUntrackedFiles no
-dotfiles checkout
-
 # SbarLua
 (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
 
