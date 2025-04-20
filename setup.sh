@@ -50,8 +50,8 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock static-only -bool "true"
 
 ## Keyboard 
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 5
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write -globalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write -globalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
