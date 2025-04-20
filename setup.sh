@@ -34,7 +34,8 @@ defaults write com.apple.dock autohide-time-modifier -float 0.6;
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock mineffect -string "scale"
-defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock magnification -bool false
+defaults write com.apple.dock tilesize -int 52
 defaults write com.apple.dock "show-recents" -bool false
 
 ## Keyboard 
