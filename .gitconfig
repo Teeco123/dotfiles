@@ -1,10 +1,6 @@
-# This is Git's per-user configuration file.
 [user]
 	name = Kacper Gajko
 	email = kacper.gajko1@icloud.com
-# Please adapt and uncomment the following lines:
-#	name = Kacper
-#	email = kacper.gajko1@gmail.com
 [credential]
 	helper = osxkeychain
 [push]
