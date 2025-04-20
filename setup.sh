@@ -13,28 +13,17 @@ brew analytics off
 ## Taps
 echo "Tapping Brew..."
 brew tap koekeishiya/formulae
-brew tap FelixKratz/formulae
 
 ## Formulae
 echo "Installing Brew Formulae..."
-brew install lua
 brew install git
 brew install neovim
 brew install cmake
 brew install yabai
 brew install nvm
-brew install switchaudio-osx
-brew install nowplaying-cli
-brew install sketchybar
 
 ## Casks
 brew install --cask wezterm
-
-## Fonts
-brew install --cask sf-symbols
-brew install --cask font-sf-mono
-brew install --cask font-sf-pro
-curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
 # macOS Settings
 echo "Changing macOS defaults..."
@@ -53,6 +42,7 @@ defaults write com.apple.dock static-only -bool "true"
 ## Keyboard 
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
 defaults write -globalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write -globalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -70,13 +60,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool "false"
 defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "false"
 defaults write com.apple.finder "ShowExternalHardDrivesOnDesktop" -bool "false"
 defaults write com.apple.finder "ShowRemovableMediaOnDesktop" -bool "false"
-
-## Keyboard
-defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
-
-# SbarLua
-(git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
-
 
 rm -rf .dotfiles/
 
