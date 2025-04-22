@@ -21,6 +21,7 @@ brew install neovim
 brew install cmake
 brew install yabai
 brew install nvm
+brew install ripgrep
 
 ## Casks
 brew install --cask wezterm
