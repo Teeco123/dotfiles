@@ -22,6 +22,8 @@ brew install cmake
 brew install yabai
 brew install nvm
 brew install ripgrep
+brew install swiftlint
+
 
 ## Casks
 brew install --cask wezterm
