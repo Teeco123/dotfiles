@@ -13,20 +13,22 @@ brew analytics off
 ## Taps
 echo "Tapping Brew..."
 brew tap koekeishiya/formulae
+brew tap FelixKratz/formulae
 
 ## Formulae
 echo "Installing Brew Formulae..."
 brew install git
 brew install neovim
 brew install cmake
+brew install sketchybar
 brew install yabai
 brew install nvm
 brew install ripgrep
 brew install swiftlint
 
-
 ## Casks
 brew install --cask wezterm
+brew install --cask font-hack-nerd-font
 
 # macOS Settings
 echo "Changing macOS defaults..."
@@ -70,6 +72,8 @@ rm -rf .dotfiles/
 for app in "Dock" "Finder"; do
   killall "${app}" > /dev/null 2>&1
 done
+
+brew services start sketchybar
 
 # Done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
