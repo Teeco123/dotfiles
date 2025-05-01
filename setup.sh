@@ -22,6 +22,7 @@ brew install neovim
 brew install cmake
 brew install sketchybar
 brew install yabai
+brew install skhd
 brew install nvm
 brew install ripgrep
 brew install swiftlint
