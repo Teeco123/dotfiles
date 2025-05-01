@@ -26,10 +26,20 @@ brew install skhd
 brew install nvm
 brew install ripgrep
 brew install swiftlint
+brew install mas
 
 ## Casks
 brew install --cask wezterm
+
+## Fonts
 brew install --cask font-hack-nerd-font
+
+## App Store apps
+mas install 497799835 # XCode
+mas install 425424353 # The unarhiver
+mas install 1480068668 # Messenger
+mas install 1440147259 # AdGuard safari
+mas install 1637413102 # Darker for safari
 
 # macOS Settings
 echo "Changing macOS defaults..."
