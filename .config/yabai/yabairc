@@ -36,4 +36,9 @@ yabai -m config                                 \
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^FaceTime$" opacity=1.0
 
+yabai -m space 1 --label browser
+yabai -m space 2 --label terminal
+yabai -m space 3 --label imessage
+
+
 echo "yabai configuration loaded.."
