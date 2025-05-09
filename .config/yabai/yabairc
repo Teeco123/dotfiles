@@ -2,8 +2,8 @@ sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 yabai -m config                                 \
-    external_bar                 off:40:0        \
-    menubar_opacity              0.0            \
+    external_bar                 all:40:0        \
+    menubar_opacity              1.0            \
     mouse_follows_focus          off            \
     focus_follows_mouse          off            \
     display_arrangement_order    default        \
@@ -16,16 +16,16 @@ yabai -m config                                 \
     window_animation_easing      ease_out_circ  \
     window_opacity_duration      0.0            \
     active_window_opacity        1.0            \
-    normal_window_opacity        0.01           \
+    normal_window_opacity        1.0           \
     window_opacity               on             \
     insert_feedback_color        0xffd75f5f     \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  4              \
-    bottom_padding               4              \
-    left_padding                 4              \
-    right_padding                4              \
+    top_padding                  0              \
+    bottom_padding               0              \
+    left_padding                 0              \
+    right_padding                0              \
     window_gap                   0              \
     layout                       stack          \
     mouse_modifier               fn             \
@@ -39,6 +39,6 @@ yabai -m rule --add app="^FaceTime$" opacity=1.0
 yabai -m space 1 --label browser
 yabai -m space 2 --label terminal
 yabai -m space 3 --label imessage
-
+yabai -m space 4 --label other
 
 echo "yabai configuration loaded.."

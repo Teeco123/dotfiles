@@ -36,16 +36,31 @@ wezterm.on("gui-startup", function(cmd)
 	--
 	local tabDS1, paneDS1, windowDS = mux.spawn_window({
 		workspace = "Current project",
-		cwd = "/Users/kacper/Developer/cli-calendar/",
+		cwd = "/Users/kacper/Developer/sugarspice-shop/",
 	})
 	tabDS1:set_title("nvim")
 	tabDS1:activate()
 	paneDS1:send_text("nvim\n")
 
-	local tabDS2, paneDS2 = windowDS:spawn_tab({
-		cwd = "/Users/kacper/Developer/cli-calendar/",
+	local tabDS5, paneDS5 = windowDS:spawn_tab({
+		cwd = "/Users/kacper/Developer/sugarspice-shop/",
 	})
-	tabDS2:set_title("console")
+	tabDS5:set_title("console")
+
+	local tabDS2, paneDS2 = windowDS:spawn_tab({
+		cwd = "/Users/kacper/Developer/sugarspice-shop/",
+	})
+	tabDS2:set_title("server")
+
+	local tabDS3, paneDS3 = windowDS:spawn_tab({
+		cwd = "/Users/kacper/Developer/sugarspice-shop/",
+	})
+	tabDS3:set_title("db")
+
+	local tabDS4, paneDS4 = windowDS:spawn_tab({
+		cwd = "/Users/kacper/Developer/sugarspice-shop/",
+	})
+	tabDS4:set_title("studio")
 
 	-- Set default workspace
 	mux.set_active_workspace("Default")

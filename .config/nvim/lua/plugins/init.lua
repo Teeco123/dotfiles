@@ -1,9 +1,5 @@
 return {
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
+	require("plugins.telescope"),
 	require("plugins.lspconfig"),
 	require("plugins.cmp"),
 	require("plugins.conform"),
@@ -12,4 +8,6 @@ return {
 	require("plugins.treesitter"),
 	require("plugins.themes"),
 	require("plugins.svelte"),
+	require("plugins.none-ls"),
+	require("plugins.which"),
 }

@@ -3,14 +3,14 @@ ITEM_DIR="$CONFIG_DIR/items"
 
 bar=(
 	position=top
-	height=35
+	height=40
 	padding_right=10
-	padding_left=5
+	padding_left=10
 	sticky=on
-	margin=8
-	y_offset=3
+	margin=0
+	y_offset=0
 	color=0xee1e1c31
-	corner_radius=20
+	corner_radius=0
 	shadow=true
 )
 
@@ -30,6 +30,7 @@ sketchybar --default "${default[@]}" \
 	--bar "${bar[@]}"
 
 source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/yabai.sh"
 
 sketchybar --add item clock right \
 	--set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
@@ -41,7 +42,6 @@ sketchybar --add item clock right \
 	--subscribe battery system_woke power_source_change
 
 source "$ITEM_DIR/messages.sh"
-source "$ITEM_DIR/mic.sh"
 source "$ITEM_DIR/music.sh"
 
 sketchybar --update
