@@ -27,6 +27,9 @@ brew install nvm
 brew install ripgrep
 brew install swiftlint
 brew install mas
+brew install eza
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
 
 ## Casks
 brew install --cask wezterm
@@ -88,35 +91,3 @@ brew services start sketchybar
 
 # Done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
