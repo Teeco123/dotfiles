@@ -1,5 +1,13 @@
 # ~/.zshrc
 
+# Git aliases
+alias gcam="git commit -a -m"
+alias gst="git status"
+alias gp="git push"
+
+# eza alieses
+alias ls="eza -a --icons"
+
 # Function to display Git branch and status
 git_branch_name() {
   branch=$(git symbolic-ref HEAD 2> /dev/null | awk -F'/' '{print $NF}')
@@ -29,3 +37,8 @@ setopt prompt_subst
 
 # Prompt structure with Git branch and status
 prompt='%F{magenta}%1/%f$(git_branch_name) %F{yellow}~%f '
+
+# Zsh-addons
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13"
