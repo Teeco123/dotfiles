@@ -1,6 +1,9 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,13 +15,32 @@
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
+      flake-utils,
       nix-darwin,
       home-manager,
     }:
-    {
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            stylua
+            lua-language-server
+            nixfmt-rfc-style
+            nil
+            bash-language-server
+            shfmt
+          ];
+        };
+      }
+    )
+    // {
       darwinConfigurations."Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         modules = [
           ./hosts/macbook/configuration.nix
@@ -32,20 +54,5 @@
           }
         ];
       };
-
-      devShells.aarch64-darwin.default =
-        let
-          pkgs = import nixpkgs { system = "aarch64-darwin"; };
-        in
-        pkgs.mkShell {
-          buildInputs = with pkgs; [
-            stylua
-            lua-language-server
-            nixfmt-rfc-style
-            nil
-            bash-language-server
-            shfmt
-          ];
-        };
     };
 }
