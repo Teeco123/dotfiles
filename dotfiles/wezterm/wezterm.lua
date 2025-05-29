@@ -75,7 +75,7 @@ wezterm.on("gui-startup", function(cmd)
 	})
 	tabDS4:set_title("studio")
 	paneDS4:send_text("nix-develop\n")
-	paneDS4:send_text("npm run studio:start")
+	paneDS4:send_text("npm run db:studio")
 
 	-- Set default workspace
 	mux.set_active_workspace("Default")
