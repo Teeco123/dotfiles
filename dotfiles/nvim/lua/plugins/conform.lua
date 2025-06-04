@@ -25,11 +25,16 @@ return {
 				},
 			},
 
-			-- Optional: Format on save
-			format_on_save = {
-				lsp_fallback = true,
-				timeout_ms = 500,
-			},
+			format_on_save = function(bufnr)
+				local ft = vim.bo[bufnr].filetype
+				local disable_lsp_fallback = {
+					glsl = true,
+				}
+				return {
+					lsp_fallback = not disable_lsp_fallback[ft],
+					timeout_ms = 500,
+				}
+			end,
 		},
 	},
 }
