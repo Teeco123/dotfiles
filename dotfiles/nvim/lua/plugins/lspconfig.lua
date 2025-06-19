@@ -13,6 +13,7 @@ return {
 			require("lspconfig").ts_ls.setup({})
 			require("lspconfig").sourcekit.setup({
 				filetypes = { "swift", "objc", "objcpp" },
+				cmd = { "xcrun", "sourcekit-lsp" },
 			})
 			require("lspconfig").bashls.setup({
 				filetypes = { "bash", "sh", "conf" },
