@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, mac-app-util, ... }:
 {
   imports = [
     ../../programs/zsh.nix
@@ -7,6 +7,8 @@
     ../../programs/nvim.nix
     ../../programs/wezterm.nix
     ../../programs/yazi.nix
+    ../../programs/vesktop.nix
+    mac-app-util.homeManagerModules.default
   ];
 
   programs.home-manager.enable = true;

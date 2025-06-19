@@ -10,6 +10,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -19,6 +23,7 @@
       flake-utils,
       nix-darwin,
       home-manager,
+      mac-app-util,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -42,6 +47,7 @@
       darwinConfigurations."Kacpers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         modules = [
           ./hosts/macbook/configuration.nix
+          mac-app-util.darwinModules.default
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -49,6 +55,9 @@
             home-manager.verbose = true;
             home-manager.backupFileExtension = "bac";
             home-manager.users.kacper = ./hosts/macbook/home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit mac-app-util;
+            };
           }
         ];
       };
